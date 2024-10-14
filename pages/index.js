@@ -1,16 +1,14 @@
-import Link from "next/link";
-export default function Home() {
+import { getFeaturedEvents } from '../dummy-data';
+import EventList from '../components/evvents/event-list';
+
+function HomePage() {
+  const featuredEvents = getFeaturedEvents();
+
   return (
-    <div >
-     <h1>The HomePage</h1>
-     <ul>
-      <li>
-        <Link href="/portfolio">Portfolio</Link>
-      </li>
-      <li>
-        <a href="/clients">Client Page</a>
-      </li>
-     </ul>
+    <div>
+      <EventList items={featuredEvents} />
     </div>
   );
 }
+
+export default HomePage;
